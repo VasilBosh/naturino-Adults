@@ -151,6 +151,13 @@ export default function CheckoutSection() {
       })
       
       setIsSuccess(true)
+      // ИЗПРАЩАНЕ КЪМ Фейсбук 
+      if (typeof window !== 'undefined' && (window as any).fbq) {
+  (window as any).fbq('track', 'Purchase', {
+    value: total,
+    currency: 'EUR'
+  });
+}
       resetForm()
 
     } catch (error) {
