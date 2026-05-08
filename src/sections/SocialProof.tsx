@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const videoTestimonials = [
   { id: 1, url: "https://play.gumlet.io/embed/69f0f469a3dc19951f1fc4b2", title: "Отзив от момче" },
