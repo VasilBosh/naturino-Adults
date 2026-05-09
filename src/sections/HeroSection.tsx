@@ -12,8 +12,8 @@ export default function HeroSection() {
   const levels = [
     {
       num: "01",
-      title: "БАРИЕРНА ЗАЩИТА",
-      desc: "Спира вируса още при входа",
+      title: "ИМУНИТЕТ И ЕНЕРГИЯ",
+      desc: "Тези съставки са богати на Витамин С и антиоксиданти. Те изграждат антивирусен щит, като същевременно предпазват клетките от оксидативен стрес, което гарантира, че имунната система работи без да черпи от жизнената ти енергия.",
       color: "from-emerald-500 to-green-400",
       bgColor: "bg-emerald-50",
       borderColor: "border-emerald-200",
@@ -21,8 +21,8 @@ export default function HeroSection() {
     },
     {
       num: "02",
-      title: "БЪРЗ РЕАКТИВЕН УДАР",
-      desc: "Ускорява имунния отговор 3x",
+      title: "ФОКУС И КОНЦЕНТРАЦИЯ",
+      desc: "Ментата и джинджифилът подобряват кръвообращението (включително към мозъка). Ехинацеята и аронията пречистват системата, което премахва стреса и позволява на хората да повишат концентрацията си значително.",
       color: "from-lime-500 to-green-500",
       bgColor: "bg-lime-50",
       borderColor: "border-lime-200",
@@ -30,8 +30,8 @@ export default function HeroSection() {
     },
     {
       num: "03",
-      title: "ДЪЛБОКА РЕГЕНЕРАЦИЯ",
-      desc: "Балансира и възстановява цялата система",
+      title: "БЪРЗО ВЪЗСТАНОВЯВАНЕ И БАЛАНС",
+      desc: "Балансира и възстановява цялата система, като адаптогените (Астрагал, Рейши) регулират кортизола. Гъбите и сладкият корен помагат на тялото да се възстанови от физическо и психическо натоварване до 2 пъти по-бързо, връщайки баланса в нервната система за кратко време.",
       color: "from-green-600 to-emerald-600",
       bgColor: "bg-green-50",
       borderColor: "border-green-200",
@@ -39,9 +39,6 @@ export default function HeroSection() {
     }
   ]
 
-  // ═══════════════════════════════════════════════════════════════
-  // ⚡ 5-ТЕ СУПЕР ПОЛЗИ — не само имунитет!
-  // ═══════════════════════════════════════════════════════════════
   const benefits = [
     { icon: "🛡️", title: "Силен имунитет", desc: "3 линии на защита" },
     { icon: "⚡", title: "Енергия целия ден", desc: "Без нужда от кафе" },
@@ -65,9 +62,6 @@ export default function HeroSection() {
 
       <div className="relative z-20 container mx-auto px-4 md:px-8 lg:px-16 max-w-7xl">
         
-        {/* ═══════════════════════════════════════════════════════════════
-            🔥 ЗАГЛАВИЕ — По-четлив шрифт + 5 ползи
-           ═══════════════════════════════════════════════════════════════ */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -83,7 +77,6 @@ export default function HeroSection() {
             Единствената формула в България, работеща на 5 нива!
           </motion.div>
 
-          {/* ПО-ЧЕТЛИВ ШРИФТ — Inter/Helvetica style, не Playfair */}
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-green-900 mb-3 md:mb-4 leading-[1.1] tracking-tight max-w-4xl mx-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
             Енергия, фокус и имунитет 
             <br className="hidden sm:block" />
@@ -98,9 +91,6 @@ export default function HeroSection() {
           </p>
         </motion.div>
 
-        {/* ═══════════════════════════════════════════════════════════════
-            ⚡ 5-ТЕ СУПЕР ПОЛЗИ — Бърз скан, мигновено разбиране
-           ═══════════════════════════════════════════════════════════════ */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -125,9 +115,6 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* ═══════════════════════════════════════════════════════════════
-            🏗️ ТРОЙНАТА АРХИТЕКТУРА™ 
-           ═══════════════════════════════════════════════════════════════ */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -135,10 +122,10 @@ export default function HeroSection() {
           className="mb-6 md:mb-10"
         >
           <div className="text-center mb-4 md:mb-6">
-            <h2 className="text-2xl md:text-xl font-bold text-green-800" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+            <h2 className="text-2xl md:text-4xl font-bold text-green-800" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
               Как работи? <span className="text-green-600">Тройна Имунна Архитектура™</span>
             </h2>
-            <p className="text-gray-500 text-l md:text-xxl mt-1">13 билки, подредени да работят като един организъм — не просто смесени</p>
+            <p className="text-gray-500 text-lg md:text-xxl mt-1">13 билки, подредени да работят като един организъм — не просто смесени</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 max-w-5xl mx-auto">
@@ -149,21 +136,25 @@ export default function HeroSection() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.5 + i * 0.12 }}
                 whileHover={{ y: -3 }}
-                className={`${level.bgColor} rounded-2xl p-4 border-2 ${level.borderColor}`}
+                className={`${level.bgColor} rounded-2xl p-5 border-2 ${level.borderColor} flex flex-col gap-4`}
               >
-                <div className="flex items-center gap-2.5 mb-3">
-                  <div className={`w-9 h-9 rounded-lg bg-gradient-to-br ${level.color} flex items-center justify-center text-white font-black text-sm shadow-md`}>
+                {/* ФИКСИРАНА ЦИФРА И ЗАГЛАВИЕ */}
+                <div className="flex items-start gap-3">
+                  <div className={`flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br ${level.color} flex items-center justify-center text-white font-black text-sm shadow-md`}>
                     {level.num}
                   </div>
-                  <div>
-                    <h3 className="font-bold text-green-900 text-xl leading-tight">{level.title}</h3>
-                    <p className="text-green-700 text-[14px]">{level.desc}</p>
-                  </div>
+                  <h3 className="font-bold text-green-900 text-xl leading-tight uppercase tracking-tight">
+                    {level.title}
+                  </h3>
                 </div>
 
-                <div className="space-y-1">
+                <p className="text-green-700 text-[14px] leading-relaxed">
+                  {level.desc}
+                </p>
+
+                <div className="space-y-1 mt-auto">
                   {level.items.map((item, j) => (
-                    <div key={j} className="flex items-center gap-2 bg-white/60 rounded-lg px-2 py-1">
+                    <div key={j} className="flex items-center gap-2 bg-white/60 rounded-lg px-2 py-1 border border-white/50">
                       <span className="text-base">{item.split(' ')[0]}</span>
                       <span className="text-green-800 text-sm font-medium">{item.split(' ').slice(1).join(' ')}</span>
                     </div>
@@ -174,12 +165,7 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-                {/* ═══════════════════════════════════════════════════════════════
-            🎯 CTA + ПРОДУКТ — ФИКС: Продуктът по-голям, центриран, бутон под него
-           ═══════════════════════════════════════════════════════════════ */}
         <div className="flex flex-col items-center max-w-5xl mx-auto">
-          
-          {/* Продукт картата — ПО-ГОЛЯМА и ЦЕНТРИРАНА */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -209,7 +195,6 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* БУТОН ПОД ПРОДУКТА — центриран */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -249,7 +234,6 @@ export default function HeroSection() {
 
         </div>
 
-        {/* Скрол индикатор */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
