@@ -153,11 +153,25 @@ export default function CheckoutSection() {
       setIsSuccess(true)
       // ИЗПРАЩАНЕ КЪМ Фейсбук 
       if (typeof window !== 'undefined' && (window as any).fbq) {
-  (window as any).fbq('track', 'Purchase', {
-    value: total,
-    currency: 'EUR'
-  });
-}
+        // 1. Подаваме данните за клиента (Advanced Matching), за да вдигнем оценката от 5.4
+        (window as any).fbq('init', '1807775813528150', {
+          em: formData.email ? formData.email.toLowerCase().trim() : "", 
+          ph: formData.phone ? formData.phone.replace(/\D/g, '') : "",
+          fn: formData.firstName ? formData.firstName.toLowerCase().trim() : "",
+          ln: formData.lastName ? formData.lastName.toLowerCase().trim() : "",
+          ct: formData.city ? formData.city.toLowerCase().trim() : "",
+          country: 'bg'
+        });
+
+        // 2. Изпращаме самата покупка с всички детайли
+        (window as any).fbq('track', 'Purchase', {
+          value: total,
+          currency: 'EUR',
+          content_ids: ['naturino-kids'],
+          content_type: 'product',
+          num_items: quantity
+        });
+      }
       resetForm()
 
     } catch (error) {
