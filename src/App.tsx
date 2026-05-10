@@ -285,6 +285,25 @@ function SceneBackground() {
 }
 
 export default function App() {
+
+  // --- ТУК СЕ ЗАРЕЖДА MICROSOFT CLARITY ---
+  useEffect(() => {
+    const win = window as any;
+    if (!win.clarity) {
+      win.clarity = function() {
+        (win.clarity.q = win.clarity.q || []).push(arguments);
+      };
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = "https://www.clarity.ms/tag/wouvw756l1";
+      const firstScript = document.getElementsByTagName('script')[0];
+      if (firstScript && firstScript.parentNode) {
+        firstScript.parentNode.insertBefore(script, firstScript);
+      }
+    }
+  }, []);
+  // ----------------------------------------
+
   return (
     <div className="relative min-h-screen">
       <Suspense fallback={<div className="fixed inset-0 z-0 bg-gradient-to-b from-green-50 to-white" />}>
