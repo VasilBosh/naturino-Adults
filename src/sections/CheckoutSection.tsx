@@ -96,7 +96,7 @@ export default function CheckoutSection() {
   }
 
   // ═══════════════════════════════════════════════════════════════
-  // 📤 ИЗПРАЩАНЕ НА ПОРЪЧКАТА (МОДИФИЦИРАНО)
+  // 📤 ИЗПРАЩАНЕ НА ПОРЪЧКАТА (ОПРАВЕНО — ПРЕМАХНАТО ДУБЛИРАНЕ НА FBQ)
   // ═══════════════════════════════════════════════════════════════
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -107,76 +107,55 @@ export default function CheckoutSection() {
 
     setIsSubmitting(true)
 
-    // Подготовка на данните точно както ги очаква твоят Google Script
+    // Генерираме уникално ID тук, за да е еднакво за Браузъра и Сървъра
+    const eventId = 'pur_' + Date.now() + '_' + Math.floor(Math.random() * 1000);
     const fullName = `${formData.firstName.trim()} ${formData.lastName.trim()}`
     
     const orderData = {
-      SK: 'id:9307307573', // Твоят ключ за достъп
+      SK: 'id:9307307573',
       fullName: fullName,
       phone: formData.phone,
       email: formData.email,
       courier: formData.courier,
       city: formData.city,
-      officeAddress: formData.address, // В скрипта е "officeAddress"
+      officeAddress: formData.address,
       notes: isPromoValid ? `Промо код: PROMO99` : '',
       quantity: quantity,
       total: total.toFixed(2),
-      eventId: 'event_' + Date.now() // Уникално ID за Facebook CAPI
+      eventId: eventId // Подаваме генерираното ID към Google Script
     }
 
     try {
-      // ИЗПРАЩАНЕ КЪМ GOOGLE SHEETS
+      // 1. ИЗПРАЩАНЕ КЪМ GOOGLE SHEETS (Server-side CAPI се задейства от тук)
       await fetch(SCRIPT_URL, {
         method: 'POST',
-        mode: 'no-cors', // Използваме no-cors, защото Google Apps Script често блокира CORS
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(orderData)
       });
 
-      // Facebook Pixel (Client-side)
-      fbq('Purchase', {
-        content_ids: ['naturino-kids'],
-        content_type: 'product',
-        value: total,
-        currency: 'EUR',
-        num_items: quantity
-      })
-
-      // Запазваме данните за модала
-      setSuccessData({
-        firstName: formData.firstName,
-        phone: formData.phone
-      })
-      
-      setIsSuccess(true)
-      // ИЗПРАЩАНЕ КЪМ Фейсбук 
+      // 2. ИЗПРАЩАНЕ КЪМ FACEBOOK PIXEL (Client-side) — САМО Purchase, БЕЗ повторно init!
       if (typeof window !== 'undefined' && (window as any).fbq) {
-        // 1. Подаваме данните за клиента (Advanced Matching), за да вдигнем оценката от 5.4
-        (window as any).fbq('init', '1807775813528150', {
-          em: formData.email ? formData.email.toLowerCase().trim() : "", 
-          ph: formData.phone ? formData.phone.replace(/\D/g, '') : "",
-          fn: formData.firstName ? formData.firstName.toLowerCase().trim() : "",
-          ln: formData.lastName ? formData.lastName.toLowerCase().trim() : "",
-          ct: formData.city ? formData.city.toLowerCase().trim() : "",
-          country: 'bg'
-        });
-
-        // 2. Изпращаме самата покупка с всички детайли
         (window as any).fbq('track', 'Purchase', {
           value: total,
           currency: 'EUR',
           content_ids: ['naturino-kids'],
           content_type: 'product',
           num_items: quantity
-        });
+        }, { eventID: orderData.eventId }); // eventID за дедупликация със Server-side CAPI
       }
+
+      // Запазваме данните за модала и ресетваме
+      setSuccessData({
+        firstName: formData.firstName,
+        phone: formData.phone
+      })
+      setIsSuccess(true)
       resetForm()
 
     } catch (error) {
       console.error('Грешка при изпращане:', error)
-      alert('Възникна грешка при изпращането на поръчката. Моля, опитайте отново.')
+      alert('Възникна грешка при изпращането. Моля, опитайте отново.')
     } finally {
       setIsSubmitting(false)
     }
@@ -593,7 +572,7 @@ export default function CheckoutSection() {
                   )}
                   {formData.promoCode && !isPromoValid && (
                     <p className="text-gray-400 text-xs mt-1.5">
-                      Не сте въведели валиден промо код или той не е активен в момента!
+                      Не сте въведали валиден промо код или той не е активен в момента!
                     </p>
                   )}
                 </div>
