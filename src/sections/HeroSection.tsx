@@ -78,16 +78,15 @@ export default function HeroSection() {
           </motion.div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-green-900 mb-3 md:mb-4 leading-[1.1] tracking-tight max-w-4xl mx-auto" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-            Енергия, фокус и имунитет 
+            Събуждаш ли се изморен 
             <br className="hidden sm:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-700 via-lime-500 to-green-500 mt-0 inline-block leading-[1.3]">
-              от 13 суперфуда
+              още преди денят да е започнал?
             </span>
           </h1>
 
           <p className="text-base md:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-2" style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-            Не просто имунитет. <span className="text-green-700 font-bold">Пълна трансформация</span> на тялото — 
-            от първата седмица.
+            13 натурални екстракта за <span className="text-green-700 font-bold">енергия, фокус и имунна подкрепа</span> — без кафе, без сривове, без тежки режими.
           </p>
         </motion.div>
 
