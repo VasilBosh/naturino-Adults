@@ -54,7 +54,7 @@ export default function IngredientsSection() {
         >
           <div className="store-frame bg-white p-6 rounded-3xl max-w-md shadow-xl">
             <img
-              src="/product-herbs.png"
+              src="/product-herbs.webp"
               alt="Naturino Kids - продукт с билки"
               className="w-full h-auto floating-product"
             />

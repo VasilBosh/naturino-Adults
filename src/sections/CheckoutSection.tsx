@@ -244,7 +244,7 @@ export default function CheckoutSection() {
                 <div className="flex gap-3 md:gap-4 mb-6 p-3 md:p-4 bg-gradient-to-br from-green-50 to-lime-50 rounded-2xl border border-green-100">
                   <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-xl p-2 flex items-center justify-center flex-shrink-0">
                     <img
-                      src="/product-clean.png"
+                      src="/product-clean.webp"
                       alt="Naturino Kids"
                       className="w-full h-full object-contain"
                     />

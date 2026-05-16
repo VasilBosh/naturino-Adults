@@ -176,7 +176,7 @@ export default function HeroSection() {
               
               <div className="bg-gradient-to-br from-[#f2f7f2] to-[#e8f5e8] rounded-[28px] p-6 md:p-8 mb-5 flex justify-center">
                 <img 
-                  src="/product.png" 
+                  src="/product.webp" 
                   alt="Naturino Kids" 
                   className="w-full h-auto max-h-[320px] md:max-h-[380px] object-contain drop-shadow-2xl"
                 />
