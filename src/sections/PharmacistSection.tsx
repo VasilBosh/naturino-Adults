@@ -133,7 +133,7 @@ export default function PharmacistSection() {
               </div>
 
               <button onClick={scrollToCheckout} className="btn-primary w-full py-4 mt-4">
-                ПОРЪЧАЙ С ОТСТЪПКА 23.00 €
+                ПОРЪЧАЙ С ОТСТЪПКА 19.90 €
               </button>
             </div>
           </motion.div>
