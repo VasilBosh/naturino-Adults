@@ -174,23 +174,42 @@ export default function HeroSection() {
             <div className="bg-white p-6 md:p-8 rounded-[32px] shadow-[0_30px_80px_-20px_rgba(0,0,0,0.12)] border border-gray-50 relative">
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-green-400 via-lime-400 to-green-500 rounded-t-[32px]" />
               
-              <div className="bg-gradient-to-br from-[#f2f7f2] to-[#e8f5e8] rounded-[28px] p-6 md:p-8 mb-5 flex justify-center">
+              <div className="bg-gradient-to-br from-[#f2f7f2] to-[#e8f5e8] rounded-[28px] p-6 md:p-8 mb-5 flex justify-center relative">
+  
+                {/* СНИМКА */}
                 <img 
                   src="/product.webp" 
                   alt="Naturino Kids" 
                   className="w-full h-auto max-h-[320px] md:max-h-[380px] object-contain drop-shadow-2xl"
                 />
-              </div>
+  
+              {/* 50% OFF БАДЖ — ВЪРХУ СНИМКАТА */}
+              <div className="absolute -top-4 -right-4 bg-amber-400 text-green-900 text-xs font-black px-4 py-2 rounded-xl shadow-lg">
+                50% OFF
+              </div>              
+            </div>
 
-              <div className="flex justify-between items-end px-2">
-                <div>
-                  <p className="text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">Промо цена</p>
-                  <span className="text-green-900 text-3xl font-black">19.90 €</span>
-                </div>
-                <div className="bg-amber-400 text-green-900 text-xs font-black px-4 py-2 rounded-xl">
-                  50% OFF
-                </div>
+            {/* ЦЕНА — ПОД СНИМКАТА */}
+            <div className="flex justify-between items-end px-2">
+              <div>
+                <p className="text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">Промо цена</p>
+                <span className="text-green-900 text-3xl font-black">19.90 €</span>
               </div>
+                          {/* ДЯСНО: Куриер лога */}
+              <div className="flex items-center gap-2 bg-gray-50 rounded-xl px-3 py-2">
+                <img 
+                  src="/logo/speedy-logo.png" 
+                  alt="Speedy" 
+                  className="h-6 md:h-10 w-auto object-contain" 
+                />
+                <span className="text-gray-400 text-xs">/</span>
+                <img 
+                  src="/logo/ekont-logo.png" 
+                  alt="Еконт" 
+                  className="h-4 md:h-10 w-auto object-contain" 
+                />
+              </div>
+            </div>
             </div>
           </motion.div>
 
