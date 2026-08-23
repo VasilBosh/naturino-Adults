@@ -22,7 +22,7 @@ export default function CheckoutSection() {
       fbq('InitiateCheckout', {
         content_ids: ['naturino-kids'],
         content_type: 'product',
-        value: 23.50,
+        value: 24.90,
         currency: 'EUR'
       })
     }
@@ -47,7 +47,7 @@ export default function CheckoutSection() {
   const [touched, setTouched] = useState<Record<string, boolean>>({})
   const [isPromoValid, setIsPromoValid] = useState(false)
 
-  const basePrice = 23.50
+  const basePrice = 24.90
   const discount = isPromoValid ? 0.09 : 0
   const price = basePrice * (1 - discount)
   const total = price * quantity
@@ -313,8 +313,8 @@ export default function CheckoutSection() {
                     <span className="text-lg md:text-xl">💰</span>
                     <span className="font-bold text-xs md:text-sm">
                       {isPromoValid 
-                        ? `Спестявате ${((47.00 - price) * quantity).toFixed(2)} € общо!`
-                        : `Спестявате ${((47.00 - 23.50) * quantity).toFixed(2)} € от промоцията!`
+                        ? `Спестявате ${((49.80 - price) * quantity).toFixed(2)} € общо!`
+                        : `Спестявате ${((49.80 - 24.90) * quantity).toFixed(2)} € от промоцията!`
                       }
                     </span>
                   </div>

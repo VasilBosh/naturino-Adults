@@ -168,7 +168,7 @@ export default function FAQSection() {
             onClick={() => document.getElementById('checkout')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-gradient-to-r from-[#ff6b00] to-[#ff8533] hover:from-[#e66000] hover:to-[#ff6b00] text-white font-black text-lg px-10 py-4 rounded-2xl shadow-[0_15px_40px_-10px_rgba(255,107,0,0.3)] transition-all"
           >
-            ПОРЪЧАЙ СЕГА — 23.50 €
+            ПОРЪЧАЙ СЕГА — 24.90 €
           </motion.button>
         </motion.div>
 

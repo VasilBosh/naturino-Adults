@@ -193,7 +193,7 @@ export default function HeroSection() {
             <div className="flex justify-between items-end px-2">
               <div>
                 <p className="text-gray-400 text-[10px] font-bold uppercase tracking-wider mb-1">Промо цена</p>
-                <span className="text-green-900 text-3xl font-black">23.50 €</span>
+                <span className="text-green-900 text-3xl font-black">24.90 €</span>
               </div>
                           {/* ДЯСНО: Куриер лога */}
               <div className="flex items-center gap-2 bg-gray-50 rounded-xl px-3 py-2">
@@ -241,9 +241,9 @@ export default function HeroSection() {
               </motion.button>
               
               <div className="flex flex-col items-center">
-                <span className="text-gray-400 line-through text-base font-bold">47.00 €</span>
+                <span className="text-gray-400 line-through text-base font-bold">49.80 €</span>
                 <div className="flex items-baseline gap-2">
-                  <span className="text-green-900 text-4xl md:text-5xl font-black tracking-tighter">23.50 €</span>
+                  <span className="text-green-900 text-4xl md:text-5xl font-black tracking-tighter">24.90 €</span>
                   <span className="bg-amber-400 text-green-900 text-xs font-black px-2 py-1 rounded-lg">-50%</span>
                 </div>
               </div>

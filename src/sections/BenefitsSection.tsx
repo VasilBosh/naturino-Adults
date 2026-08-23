@@ -132,7 +132,7 @@ export default function BenefitsSection() {
 
           <div className="text-center mt-6">
             <button onClick={scrollToCheckout} className="btn-primary px-10 py-4">
-              ЗАПОЧНИ СЕГА – 23.50 €
+              ЗАПОЧНИ СЕГА – 24.90 €
             </button>
           </div>
         </motion.div>
